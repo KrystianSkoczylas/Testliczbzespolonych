@@ -59,11 +59,11 @@ LZespolona operator /(LZespolona Skl, double rz)
   return Wynik;
 }
 
-double porownaj (LZespolona  Skl1,  LZespolona  Skl2)
+bool porownaj (LZespolona  Skl1,  LZespolona  Skl2)
 {
   if(Skl1.re==Skl2.re && Skl1.im==Skl2.im)
-    {std::cout<<"Rowne"<<std::endl; return 1;}
-  std::cout<<"Nierowne"<<std::endl; return 0;
+    {std::cout<<"Rowne"<<std::endl; return true;}
+  std::cout<<"Nierowne"<<std::endl; return false;
 }
 
 LZespolona sprzezenie (LZespolona  Skl)
@@ -90,6 +90,11 @@ void wyswietl (double Skl)
 {
   std::cout<<Skl;
 }
+void wyswietl (char Skl)
+{
+  std::cout<<Skl;
+}
+
 LZespolona utworz (double re, double im)
 {
  LZespolona  Wynik;
@@ -97,9 +102,72 @@ LZespolona utworz (double re, double im)
  Wynik.im = im;
  return Wynik;
 }
-void wczytaj(LZespolona & L1)
+/*void wczytaj(LZespolona & L1)*/
+bool wczytaj(LZespolona & L1)  
 {
   char znak;
-  std::cin>>znak>>L1.re>>L1.im>>znak>>znak;
-  
+  /* std::cin>>znak>>L1.re>>L1.im>>znak>>znak;*/
+  /* std::cin>>znak;*/
+  std::cin>>znak;
+  if(znak!='(')return false;
+  std::cin>>L1.re>>L1.im;
+  std::cin>>znak;
+  if(znak!='i')return false;
+  std::cin>>znak;
+  if(znak!=')')return false;
+  return true;
 }
+
+bool wczytaj(char & oper)
+{
+  std::cin>>oper;
+  return true;
+}
+
+bool wczytajwyrazenie(LZespolona & L1,LZespolona & L2,char & oper)
+{
+  wczytaj(L1);
+  wczytaj(oper);
+  wczytaj(L2);
+  return true;
+}
+
+void wyswietlwyrazenie(LZespolona & L1,LZespolona & L2,char & oper)
+{
+  wyswietl(L1);
+  wyswietl(oper);
+  wyswietl(L2);
+}
+
+LZespolona obliczwyrazenie(LZespolona & L1,LZespolona & L2,char & oper)
+{LZespolona Wynik;
+  switch(oper)
+    {
+    case '+':
+      {Wynik=L1+L2; break;}      
+    case '-':
+      {Wynik=L1-L2; break;}
+    case '*':
+      {Wynik=L1*L2; break;}
+    case '/':
+      {Wynik=L1/L2; break;}
+    default:
+      {std::cout<<"zly operator"<<std::endl; break;}
+    }
+  return Wynik;
+}
+
+std::istream & operator >>(std::istream & str,LZespolona &Skl)
+{
+  char znak;
+  str>>znak;
+  if(znak!='(') {str.setstate(std::ios::failbit);};
+  str>>Skl.re;
+  str>>Skl.im;
+  str>>znak;
+  if(znak!='i') {str.setstate(std::ios::failbit);};
+  str>>znak;
+  if(znak!=')') {str.setstate(std::ios::failbit);};
+  return str; 
+}
+

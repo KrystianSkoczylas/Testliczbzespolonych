@@ -5,22 +5,32 @@ using namespace std;
 
 
 
-
 int main(int argc, char **argv)
 {
   LZespolona L1,L2,L3,L4,L5,L6,L7;
-  double D1,D2,A;
-  L1=utworz(2,-3);
+  double D1,D2,A,B;
+  char symbol;
+  /* L1=utworz(1,-3);
   wyswietl(L1);
-  L2=utworz(1,-4);
+  L2=utworz(1,-2);
   wyswietl(L2);
-  L3=L1+L2;
+  L3=L1*L2;
   std::cout<<"dodanie";
   wyswietl(L3);
-  wczytaj(L4);
+  B=wczytaj(L4);
+  std::cout<<"wczytaj"<<B<<std::endl;
+  std::cin>>L4;
+  if(!cin.good() ){std::cout<<"zle wpisana liczba"<<endl;}
   std::cout << L4.re << std::endl;
-  wyswietl(L4);
-  L5=sprzezenie(L1);
+  wyswietl(L4);*/
+  A=wczytajwyrazenie(L5,L6,symbol);
+  wyswietlwyrazenie(L5,L6,symbol);
+  L7=obliczwyrazenie(L5,L6,symbol);
+  wyswietl(L7);
+  wczytaj(L1);
+  wyswietl(L1);
+  if( porownaj(L1,L7) ){std::cout<<"Rowne"<<std::endl;};
+  /* L5=sprzezenie(L1);
   std::cout<<"sprzezenie";
   wyswietl(L5);
   D1=modul(L1);
@@ -35,7 +45,7 @@ int main(int argc, char **argv)
   std::cout<<"dzielenie";
   wyswietl(L3);
   A=porownaj(L1,L2);
-  std::cout<<"porownaj"<<A<<std::endl;
+  std::cout<<"porownaj"<<A<<std::endl;*/
   
   
   if (argc < 2) {
