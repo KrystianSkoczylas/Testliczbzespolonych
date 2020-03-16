@@ -1,0 +1,39 @@
+#ifndef LZESPOLONA_HH
+#define LZESPOLONA_HH
+
+/*!
+ *  Plik zawiera definicje struktury LZesplona oraz zapowiedzi
+ *  przeciazen operatorow arytmetycznych dzialajacych na tej 
+ *  strukturze.
+ */
+
+
+/*!
+ * Modeluje pojecie liczby zespolonej
+ */
+struct  LZespolona {
+  double   re;    /*! Pole repezentuje czesc rzeczywista. */
+  double   im;    /*! Pole repezentuje czesc urojona. */
+};
+
+
+/*
+ * Dalej powinny pojawic sie zapowiedzi definicji przeciazen operatorow
+ */
+
+
+LZespolona  operator + (LZespolona  Skl1,  LZespolona  Skl2);
+LZespolona  operator - (LZespolona  Skl1,  LZespolona  Skl2);
+LZespolona  operator * (LZespolona  Skl1,  LZespolona  Skl2);
+LZespolona  operator / (LZespolona  Skl1,  LZespolona  Skl2);
+void wyswietl (LZespolona Skl);
+void wyswietl (double Skl);
+LZespolona utworz (double re, double im);
+void wczytaj(LZespolona & L1);
+LZespolona sprzezenie (LZespolona  Skl);
+double modul (LZespolona Skl);
+double porownaj (LZespolona  Skl1,  LZespolona  Skl2);
+
+
+
+#endif
