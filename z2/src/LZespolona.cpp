@@ -171,3 +171,8 @@ std::istream & operator >>(std::istream & str,LZespolona &Skl)
   return str; 
 }
 
+std::ostream & operator <<(std::ostream & str, LZespolona Skl)
+{
+  str<<'('<<Skl.re<<Skl.im<<std::showpos<<Skl.im<<std::noshowpos<<'i'<<')';
+  return str;
+}

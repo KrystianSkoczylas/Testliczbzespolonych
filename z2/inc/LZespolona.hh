@@ -40,5 +40,5 @@ bool porownaj (LZespolona  Skl1,  LZespolona  Skl2);
 bool wczytajwyrazenie(LZespolona & L1,LZespolona & L2,char & oper);
 LZespolona obliczwyrazenie(LZespolona & L1,LZespolona & L2,char & oper);
 std::istream & operator >>(std::istream & str,LZespolona &Skl);
-
+std::ostream & operator <<(std::ostream & str, LZespolona SKl);
 #endif
