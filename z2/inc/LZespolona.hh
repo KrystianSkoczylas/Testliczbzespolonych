@@ -33,7 +33,6 @@ void wczytaj(LZespolona & L1);
 LZespolona sprzezenie (LZespolona  Skl);
 double modul (LZespolona Skl);
 double porownaj (LZespolona  Skl1,  LZespolona  Skl2);
-
-
+LZespolona operator /(LZespolona Skl, double rz);
 
 #endif

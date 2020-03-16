@@ -46,8 +46,16 @@ LZespolona operator / (LZespolona  Skl1,  LZespolona  Skl2)
     {std::cerr<<"Modul 0"<<std::endl; exit(1);}
   Z2=sprzezenie(Skl2);
   Gora=Skl1*Z2;
-  Wynik.re = Gora.re/(z2*z2);
-  Wynik.im = Gora.im/(z2*z2);  
+ /*Wynik.re = Gora.re/(z2*z2); */
+ /*Wynik.im = Gora.im/(z2*z2); */
+  Wynik=Gora/(z2*z2);
+  return Wynik;
+}
+LZespolona operator /(LZespolona Skl, double rz)
+{
+  LZespolona Wynik;
+  Wynik.re = Skl.re/(rz); /* */
+  Wynik.im = Skl.im/(rz); /* */
   return Wynik;
 }
 
