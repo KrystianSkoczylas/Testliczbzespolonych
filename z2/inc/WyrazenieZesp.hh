@@ -28,7 +28,8 @@ struct WyrazenieZesp {
  *
  */
 
-
+bool wczytajwyrazenie(WyrazenieZesp & Arg);
+LZespolona obliczwyrazenie(LZespolona & L1,LZespolona & L2,Operator & oper);
 void Wyswietl(WyrazenieZesp  WyrZ);
 LZespolona Oblicz(WyrazenieZesp  WyrZ);
 

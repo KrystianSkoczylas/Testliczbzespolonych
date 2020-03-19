@@ -27,6 +27,8 @@ bool wczytajwyrazenie(WyrazenieZesp & Arg)
   std::cin >> znak;
   if (znak == '+')
     Arg.Op=Op_Dodaj;
+  if(znak=='-')
+    
   wczytaj(Arg.Arg2);
   return true;
 }

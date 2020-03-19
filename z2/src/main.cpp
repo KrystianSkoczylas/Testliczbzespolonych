@@ -1,15 +1,15 @@
 #include <iostream>
 #include "BazaTestu.hh"
-
+#include "WyrazenieZesp.hh"
 using namespace std;
 
 
 
 int main(int argc, char **argv)
-{
+{ WyrazenieZesp D1;
   LZespolona L1,L2,L3,L4,L5,L6,L7;
-  double D1,D2,A,B;
-  char symbol;
+  double D2,A,B;
+  Operator symbol;
   /* L1=utworz(1,-3);
   wyswietl(L1);
   L2=utworz(1,-2);
@@ -23,12 +23,13 @@ int main(int argc, char **argv)
   if(!cin.good() ){std::cout<<"zle wpisana liczba"<<endl;}
   std::cout << L4.re << std::endl;
   wyswietl(L4);*/
-  A=wczytajwyrazenie(L5,L6,symbol);
-  wyswietlwyrazenie(L5,L6,symbol);
-  L7=obliczwyrazenie(L5,L6,symbol);
+  
+  A=wczytajwyrazenie(D1);
+  //wyswietlwyrazenie(L5,L6,symbol);
+  L7=obliczwyrazenie(D1.Arg1,D1.Arg2,D1.Op);
   wyswietl(L7);
-  wczytaj(L1);
-  wyswietl(L1);
+  std::cin>>L1;
+  std::cout<<L1;
   if( porownaj(L1,L7) ){std::cout<<"Rowne"<<std::endl;};
   /* L5=sprzezenie(L1);
   std::cout<<"sprzezenie";

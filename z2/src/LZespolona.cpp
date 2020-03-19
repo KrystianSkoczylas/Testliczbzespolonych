@@ -124,6 +124,14 @@ bool wczytaj(char & oper)
   return true;
 }
 
+/*bool wczytajwyrazenie(WyrazenieZesp & Arg)
+{
+  wczytaj(Arg.Arg1);
+  wczytaj(Arg.Op);
+  wczytaj(Arg.Arg2);
+  return true;
+  }*/
+/*
 bool wczytajwyrazenie(LZespolona & L1,LZespolona & L2,char & oper)
 {
   wczytaj(L1);
@@ -131,14 +139,29 @@ bool wczytajwyrazenie(LZespolona & L1,LZespolona & L2,char & oper)
   wczytaj(L2);
   return true;
 }
-
+*/
 void wyswietlwyrazenie(LZespolona & L1,LZespolona & L2,char & oper)
 {
   wyswietl(L1);
   wyswietl(oper);
   wyswietl(L2);
 }
-
+/*LZespolona obliczwyrazenie(LZespolona & L1,LZespolona & L2,Operator & oper)
+{LZespolona Wynik;
+  switch(oper)
+    {
+    case Op_Dodaj:
+      {Wynik=L1+L2; break;}      
+    case Op_Odejmij:
+      {Wynik=L1-L2; break;}
+    case Op_Mnoz:
+      {Wynik=L1*L2; break;}
+    case Op_Dziel:
+      {Wynik=L1/L2; break;}
+    }
+  return Wynik;
+  }*/
+/*
 LZespolona obliczwyrazenie(LZespolona & L1,LZespolona & L2,char & oper)
 {LZespolona Wynik;
   switch(oper)
@@ -156,7 +179,7 @@ LZespolona obliczwyrazenie(LZespolona & L1,LZespolona & L2,char & oper)
     }
   return Wynik;
 }
-
+*/
 std::istream & operator >>(std::istream & str,LZespolona &Skl)
 {
   char znak;
@@ -173,6 +196,6 @@ std::istream & operator >>(std::istream & str,LZespolona &Skl)
 
 std::ostream & operator <<(std::ostream & str, LZespolona Skl)
 {
-  str<<'('<<Skl.re<<Skl.im<<std::showpos<<Skl.im<<std::noshowpos<<'i'<<')';
+  str<<'('<<Skl.re<<std::showpos<<Skl.im<<std::noshowpos<<'i'<<')';
   return str;
 }
