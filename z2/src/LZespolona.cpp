@@ -58,8 +58,13 @@ LZespolona operator /(LZespolona Skl, double rz)
   Wynik.im = Skl.im/(rz); /* */
   return Wynik;
 }
-
-bool porownaj (LZespolona  Skl1,  LZespolona  Skl2)
+/*bool porownaj (LZespolona  Skl1,  LZespolona  Skl2)
+{
+  if(Skl1.re==Skl2.re && Skl1.im==Skl2.im)
+    {std::cout<<"Rowne"<<std::endl; return true;}
+  std::cout<<"Nierowne"<<std::endl; return false;
+}*/
+bool operator == (LZespolona  Skl1,  LZespolona  Skl2) /*porownak*/
 {
   if(Skl1.re==Skl2.re && Skl1.im==Skl2.im)
     {std::cout<<"Rowne"<<std::endl; return true;}
@@ -140,12 +145,13 @@ bool wczytajwyrazenie(LZespolona & L1,LZespolona & L2,char & oper)
   return true;
 }
 */
+ /*
 void wyswietlwyrazenie(LZespolona & L1,LZespolona & L2,char & oper)
 {
   wyswietl(L1);
   wyswietl(oper);
   wyswietl(L2);
-}
+  }*/
 /*LZespolona obliczwyrazenie(LZespolona & L1,LZespolona & L2,Operator & oper)
 {LZespolona Wynik;
   switch(oper)
@@ -199,3 +205,4 @@ std::ostream & operator <<(std::ostream & str, LZespolona Skl)
   str<<'('<<Skl.re<<std::showpos<<Skl.im<<std::noshowpos<<'i'<<')';
   return str;
 }
+

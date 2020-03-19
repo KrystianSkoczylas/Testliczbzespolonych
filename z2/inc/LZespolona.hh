@@ -36,7 +36,7 @@ bool wczytaj(LZespolona & L1);
 bool wczytaj(char & oper);
 LZespolona sprzezenie (LZespolona  Skl);
 double modul (LZespolona Skl);
-bool porownaj (LZespolona  Skl1,  LZespolona  Skl2);
+bool operator == (LZespolona  Skl1,  LZespolona  Skl2);
 /*bool wczytajwyrazenie(WyrazenieZesp & Arg);
   LZespolona obliczwyrazenie(LZespolona & L1,LZespolona & L2,Operator & oper); */
 std::istream & operator >>(std::istream & str,LZespolona &Skl);

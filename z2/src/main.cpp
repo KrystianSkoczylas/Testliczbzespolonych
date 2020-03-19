@@ -8,7 +8,7 @@ using namespace std;
 int main(int argc, char **argv)
 { WyrazenieZesp D1;
   LZespolona L1,L2,L3,L4,L5,L6,L7;
-  double D2,A,B;
+  double A,B;
   Operator symbol;
   /* L1=utworz(1,-3);
   wyswietl(L1);
@@ -24,13 +24,16 @@ int main(int argc, char **argv)
   std::cout << L4.re << std::endl;
   wyswietl(L4);*/
   
-  A=wczytajwyrazenie(D1);
-  //wyswietlwyrazenie(L5,L6,symbol);
-  L7=obliczwyrazenie(D1.Arg1,D1.Arg2,D1.Op);
-  wyswietl(L7);
+  //A=wczytajwyrazenie(D1);
+  std::cin>>D1;
+  // wyswietlwyrazenie(D1);
+  std::cout<<D1;
+  // L7=obliczwyrazenie(D1.Arg1,D1.Arg2,D1.Op);
+  L7=obliczwyrazenie(D1);
+  std::cout<<L7;
   std::cin>>L1;
   std::cout<<L1;
-  if( porownaj(L1,L7) ){std::cout<<"Rowne"<<std::endl;};
+  if(L1==L7){std::cout<<"Rowne"<<std::endl;};
   /* L5=sprzezenie(L1);
   std::cout<<"sprzezenie";
   wyswietl(L5);
