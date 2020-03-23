@@ -2,16 +2,6 @@
 #include <iostream>
 #include <cmath>
 
-
-
-/*!
- * Realizuje dodanie dwoch liczb zespolonych.
- * Argumenty:
- *    Skl1 - pierwszy skladnik dodawania,
- *    Skl2 - drugi skladnik dodawania.
- * Zwraca:
- *    Sume dwoch skladnikow przekazanych jako parametry.
- */
 LZespolona  operator + (LZespolona  Skl1,  LZespolona  Skl2)
 {
   LZespolona  Wynik;
@@ -42,33 +32,32 @@ LZespolona operator / (LZespolona  Skl1,  LZespolona  Skl2)
   LZespolona  Wynik,Z2,Gora;
   double z2;
   z2=modul(Skl2);
-  if(z2==0)
-    {std::cerr<<"Modul 0"<<std::endl; exit(1);}
   Z2=sprzezenie(Skl2);
   Gora=Skl1*Z2;
- /*Wynik.re = Gora.re/(z2*z2); */
- /*Wynik.im = Gora.im/(z2*z2); */
   Wynik=Gora/(z2*z2);
   return Wynik;
 }
+
 LZespolona operator /(LZespolona Skl, double rz)
 {
   LZespolona Wynik;
-  Wynik.re = Skl.re/(rz); /* */
-  Wynik.im = Skl.im/(rz); /* */
+   if(rz==0)
+    {std::cerr<<"Dzielenie przez 0"<<std::endl; exit(1);}
+  Wynik.re = Skl.re/(rz); 
+  Wynik.im = Skl.im/(rz); 
   return Wynik;
 }
-/*bool porownaj (LZespolona  Skl1,  LZespolona  Skl2)
+
+bool operator == (LZespolona  Skl1,  LZespolona  Skl2) 
 {
   if(Skl1.re==Skl2.re && Skl1.im==Skl2.im)
-    {std::cout<<"Rowne"<<std::endl; return true;}
-  std::cout<<"Nierowne"<<std::endl; return false;
-}*/
-bool operator == (LZespolona  Skl1,  LZespolona  Skl2) /*porownak*/
+    { return true;}
+  return false;
+}
+
+bool operator != (LZespolona  Skl1,  LZespolona  Skl2)
 {
-  if(Skl1.re==Skl2.re && Skl1.im==Skl2.im)
-    {std::cout<<"Rowne"<<std::endl; return true;}
-  std::cout<<"Nierowne"<<std::endl; return false;
+  return!(Skl1==Skl2);
 }
 
 LZespolona sprzezenie (LZespolona  Skl)
@@ -98,7 +87,7 @@ void wyswietl (double Skl)
 void wyswietl (char Skl)
 {
   std::cout<<Skl;
-}
+  }
 
 LZespolona utworz (double re, double im)
 {
@@ -107,12 +96,10 @@ LZespolona utworz (double re, double im)
  Wynik.im = im;
  return Wynik;
 }
-/*void wczytaj(LZespolona & L1)*/
+
 bool wczytaj(LZespolona & L1)  
 {
   char znak;
-  /* std::cin>>znak>>L1.re>>L1.im>>znak>>znak;*/
-  /* std::cin>>znak;*/
   std::cin>>znak;
   if(znak!='(')return false;
   std::cin>>L1.re>>L1.im;
