@@ -70,11 +70,11 @@ std::istream & operator >>(std::istream & strm, WyrazenieZesp & Arg)/*wczytaj*/
   return strm;
 }
 
-std::istream & operator >>(std::istream & strm, Operator & oper)
+/*std::istream & operator >>(std::istream & strm, Operator & oper)
 {
   strm>>oper;
   return strm;
-}
+  }*/
 
 void wyswietlwyrazenie(WyrazenieZesp & Arg)
 {
