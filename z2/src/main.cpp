@@ -4,8 +4,6 @@
 #include "Statystyka.hh"
 using namespace std;
 
-
-
 int main(int argc, char **argv)
 { 
   LZespolona L1,L2;

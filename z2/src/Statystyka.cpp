@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include "Statystyka.hh"
+
 void dodaj_dobra(Statystyka & stat)
 {
   stat.dobre++; 
@@ -34,7 +35,7 @@ int ile_w_sumie(Statystyka & stat)
 
 double procent_dobrych(Statystyka & stat)
 { double Wynik,a;
-  a=stat.dobre+stat.zle;
+  a=ile_w_sumie(stat);
   Wynik=(( (stat.dobre)/(a))*100);
   return Wynik;
 }

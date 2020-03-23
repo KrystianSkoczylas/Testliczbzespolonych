@@ -75,20 +75,6 @@ double modul (LZespolona Skl)
   return Wynik;
 }
 
-void wyswietl (LZespolona Skl)
-{
-  std::cout<<"("<<Skl.re<<std::showpos<<Skl.im<<std::noshowpos<<"i)";
-}
-
-void wyswietl (double Skl)
-{
-  std::cout<<Skl;
-}
-void wyswietl (char Skl)
-{
-  std::cout<<Skl;
-  }
-
 LZespolona utworz (double re, double im)
 {
  LZespolona  Wynik;
@@ -97,82 +83,6 @@ LZespolona utworz (double re, double im)
  return Wynik;
 }
 
-bool wczytaj(LZespolona & L1)  
-{
-  char znak;
-  std::cin>>znak;
-  if(znak!='(')return false;
-  std::cin>>L1.re>>L1.im;
-  std::cin>>znak;
-  if(znak!='i')return false;
-  std::cin>>znak;
-  if(znak!=')')return false;
-  return true;
-}
-
-bool wczytaj(char & oper)
-{
-  std::cin>>oper;
-  return true;
-}
-
-/*bool wczytajwyrazenie(WyrazenieZesp & Arg)
-{
-  wczytaj(Arg.Arg1);
-  wczytaj(Arg.Op);
-  wczytaj(Arg.Arg2);
-  return true;
-  }*/
-/*
-bool wczytajwyrazenie(LZespolona & L1,LZespolona & L2,char & oper)
-{
-  wczytaj(L1);
-  wczytaj(oper);
-  wczytaj(L2);
-  return true;
-}
-*/
- /*
-void wyswietlwyrazenie(LZespolona & L1,LZespolona & L2,char & oper)
-{
-  wyswietl(L1);
-  wyswietl(oper);
-  wyswietl(L2);
-  }*/
-/*LZespolona obliczwyrazenie(LZespolona & L1,LZespolona & L2,Operator & oper)
-{LZespolona Wynik;
-  switch(oper)
-    {
-    case Op_Dodaj:
-      {Wynik=L1+L2; break;}      
-    case Op_Odejmij:
-      {Wynik=L1-L2; break;}
-    case Op_Mnoz:
-      {Wynik=L1*L2; break;}
-    case Op_Dziel:
-      {Wynik=L1/L2; break;}
-    }
-  return Wynik;
-  }*/
-/*
-LZespolona obliczwyrazenie(LZespolona & L1,LZespolona & L2,char & oper)
-{LZespolona Wynik;
-  switch(oper)
-    {
-    case '+':
-      {Wynik=L1+L2; break;}      
-    case '-':
-      {Wynik=L1-L2; break;}
-    case '*':
-      {Wynik=L1*L2; break;}
-    case '/':
-      {Wynik=L1/L2; break;}
-    default:
-      {std::cout<<"zly operator"<<std::endl; break;}
-    }
-  return Wynik;
-}
-*/
 std::istream & operator >>(std::istream & str,LZespolona &Skl)
 {
   char znak;
