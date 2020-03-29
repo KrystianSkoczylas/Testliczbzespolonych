@@ -5,7 +5,7 @@
 
 using namespace std;
 
-static WyrazenieZesp  TestLatwy[] =
+static WyrazenieZesp  TestLatwy[] = /*ustalona baza pytan */
   { {{2,1}, Op_Dodaj, {1,2}},
     {{1,0}, Op_Odejmij, {0,1}},
     {{3,0}, Op_Mnoz, {0,3}},
@@ -13,7 +13,7 @@ static WyrazenieZesp  TestLatwy[] =
     {{7,3}, Op_Dziel, {1,0}},
   };
 
-static WyrazenieZesp  TestTrudny[] =
+static WyrazenieZesp  TestTrudny[] = /*ustalona baza pytan */
   { {{20,10}, Op_Dodaj, {10,20}},
     {{17,12}, Op_Odejmij, {-7,11}},
     {{3,2}, Op_Mnoz, {4,3}},

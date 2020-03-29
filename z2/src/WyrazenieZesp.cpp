@@ -2,7 +2,7 @@
 #include "LZespolona.hh"
 #include <iostream>
 
-LZespolona obliczwyrazenie(WyrazenieZesp & Arg)
+LZespolona obliczwyrazenie(WyrazenieZesp & Arg) /*obliczenie i zwrocenie wyniku wyrazenia zespolonego */
 {LZespolona Wynik;
   switch(Arg.Op)
     {
@@ -18,7 +18,7 @@ LZespolona obliczwyrazenie(WyrazenieZesp & Arg)
   return Wynik;
 }
 
-std::istream & operator >>(std::istream & strm, WyrazenieZesp & Arg)
+std::istream & operator >>(std::istream & strm, WyrazenieZesp & Arg) /*wczytanie wyrazenia zespolonego */
 {
   char znak;
   strm>>Arg.Arg1>>znak>>Arg.Arg2;
@@ -33,7 +33,7 @@ std::istream & operator >>(std::istream & strm, WyrazenieZesp & Arg)
   return strm;
 }
 
-std::ostream & operator <<(std::ostream & strm, WyrazenieZesp Arg)
+std::ostream & operator <<(std::ostream & strm, WyrazenieZesp Arg) /*wyswietlenie wyrazenia zespolonego */
 {  
   strm<<Arg.Arg1;
   if(Arg.Op==Op_Dodaj)

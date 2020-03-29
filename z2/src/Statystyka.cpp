@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include "Statystyka.hh"
-
+/*funkcje obliczajace statystyke */
 void dodaj_dobra(Statystyka & stat)
 {
   stat.dobre++; 
@@ -40,7 +40,7 @@ double procent_dobrych(Statystyka & stat)
   return Wynik;
 }
 
-std::ostream & operator <<(std::ostream & str, Statystyka stat)
+std::ostream & operator <<(std::ostream & str, Statystyka stat) /*wyswietlenie statystyki */
 {
  str<<"Ilosc dobrych  odpowiedzi: "<< ile_dobrych(stat)  <<std::endl;
  str<<"Ilosc blednych  odpowiedzi: "<< ile_zlych(stat)  <<std::endl;
